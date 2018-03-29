@@ -28,7 +28,7 @@
 
 		<script>
 			require(["dojo/request/xhr", "dojo/dom-construct", "dojo/dom", "dojo/on", "dojo/domReady!"], function (xhr, domConstruct, dom, on) {
-				xhr("http://its-dev04.infradev.dev.laval.l121:9000/pie_chart", {
+				xhr("url address here", {
 					handleAs: "json"
 				}).then(function (data) {
 					var script = domConstruct.toDom(data.script);
@@ -42,7 +42,7 @@
 			});
 
 			require(["dojo/request/xhr", "dojo/dom-construct", "dojo/dom", "dojo/on", "dojo/domReady!"], function (xhr, domConstruct, dom, on) {
-				xhr("http://its-dev04.infradev.dev.laval.l121:9000/multiBar_chart", {
+				xhr("url address here", {
 					handleAs: "json"
 				}).then(function (data) {
 					var script = domConstruct.toDom(data.script);
@@ -56,7 +56,7 @@
 			});
 
 			require(["dojo/request/xhr", "dojo/dom-construct", "dojo/dom", "dojo/on", "dojo/domReady!"], function (xhr, domConstruct, dom, on) {
-				xhr("http://its-dev04.infradev.dev.laval.l121:9000/discreteBar_chart", {
+				xhr("url address here", {
 					handleAs: "json"
 				}).then(function (data) {
 					var script = domConstruct.toDom(data.script);
@@ -73,9 +73,9 @@
 			require(["dojo/request/xhr", "dojo/dom-construct", "dojo/on", "dojo/dom", "dojo/json", "dojo/domReady!"],
 				function (xhr, on, dom, domConstruct, JSON) {
 
-					xhr("http://its-dev04.infradev.dev.laval.l121:9000/pieChart_filtered", {
+					xhr("url address here", {
 						handleAs: "json",
-						data: JSON.stringify("SELECT tls201_appln.docdb_family_id, tls201_appln.earliest_publn_year FROM (((tls201_appln LEFT OUTER JOIN tls209_appln_ipc ON tls201_appln.appln_id = tls209_appln_ipc.appln_id ) LEFT OUTER JOIN tls207_pers_appln ON tls201_appln.appln_id = tls207_pers_appln.appln_id ) LEFT OUTER JOIN tls206_person ON tls207_pers_appln.person_id = tls206_person.person_id) INNER JOIN ( SELECT TOP 10000 * FROM tls201_appln) AS res ON res.appln_id = tls201_appln.appln_id"),
+						data: JSON.stringify("data value here"),
 						//headers: {'Content-Type':'text/plain'},
 						headers: { 'Content-Type': 'application/json' },
 						method: 'POST'
